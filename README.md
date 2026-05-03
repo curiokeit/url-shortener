@@ -39,32 +39,48 @@ This project simulates a real-world SaaS backend system with authentication, lin
 
 ## ⚙️ How to Run
 
-```bash
-dotnet ef database update
-dotnet run
+Run these commands:
+
+dotnet ef database update  
+dotnet run  
 
 Then open:
 
-🔹 API (Swagger): https://localhost:xxxx/swagger
-🔹 Web UI: https://localhost:xxxx
-🧪 Demo Flow
-Register a new user
-Login with your credentials
-Create a short link
-Access and manage your links
-Test redirect functionality
-💡 Project Highlights
-Built a full-stack system (API + UI)
-Implemented authentication & authorization flow
-Designed scalable backend architecture
-Applied clean code & layered structure
-Created a real-world SaaS-style project
-📌 Notes
-Only authenticated users can create and manage links
-Each user only sees their own links
-JWT tokens are used for secure API access
-MVC frontend communicates with API layer
-👨‍💻 Author
+- 🔹 API (Swagger): https://localhost:xxxx/swagger  
+- 🔹 Web UI: https://localhost:xxxx  
 
-Recep Emre Odemis
+---
+
+## 🧪 Demo Flow
+
+1. Register a new user  
+2. Login with your credentials  
+3. Create a short link  
+4. Access and manage your links  
+5. Test redirect functionality  
+
+---
+
+## 💡 Project Highlights
+
+- Built a full-stack system (API + UI)  
+- Implemented authentication & authorization flow  
+- Designed scalable backend architecture  
+- Applied clean code & layered structure  
+- Created a real-world SaaS-style project  
+
+---
+
+## 📌 Notes
+
+- Only authenticated users can create and manage links  
+- Each user only sees their own links  
+- JWT tokens are used for secure API access  
+- MVC frontend communicates with API layer  
+
+---
+
+## 👨‍💻 Author
+
+Recep Emre Odemis  
 Software Developer
