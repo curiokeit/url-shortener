@@ -1,0 +1,52 @@
+﻿@model UrlShortener.Web.Models.ShortLinkViewModel
+
+<div class="container">
+    <div class="mb-4">
+        <a href="/Links/Index" class="btn btn-outline-secondary btn-sm">← Back</a>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white">
+            <h4 class="mb-0">Link Analytics</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="border rounded p-3">
+                        <p class="text-muted mb-1">Total Clicks</p>
+                        <h2 class="fw-bold">@Model.ClickCount</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="border rounded p-3">
+                        <p class="text-muted mb-1">Short Code</p>
+                        <h2 class="fw-bold">@Model.ShortCode</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="border rounded p-3">
+                        <p class="text-muted mb-1">Created At</p>
+                        <h5>@Model.CreatedAt.ToString("dd MMM yyyy")</h5>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <p class="text-muted mb-1">Original URL</p>
+            <a href="@Model.OriginalUrl" target="_blank">@Model.OriginalUrl</a>
+
+            <p class="text-muted mt-4 mb-1">Short URL</p>
+            <a href="@Model.ShortUrl" target="_blank">@Model.ShortUrl</a>
+
+            @if (Model.ExpireAt.HasValue)
+            {
+                <p class="text-muted mt-4 mb-1">Expiration Date</p>
+                <p>@Model.ExpireAt.Value.ToString("dd MMM yyyy HH:mm")</p>
+            }
+        </div>
+    </div>
+</div>

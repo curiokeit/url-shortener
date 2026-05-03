@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="UrlShortener.API/UrlShortener.API.csproj" />
+  <Project Path="UrlShortener.Web/UrlShortener.Web.csproj" Id="dd5899b1-bf06-4eca-b29b-b76a279c56e1" />
+</Solution>

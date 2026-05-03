@@ -1,0 +1,30 @@
+﻿@model UrlShortener.Web.Models.LoginViewModel
+
+<div class="container mt-5">
+    <div class="card shadow p-4 mx-auto" style="max-width: 450px;">
+        <h2 class="text-center mb-4">Login</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+
+        <form method="post">
+            <div class="mb-3">
+                <label>Email</label>
+                <input asp-for="Email" class="form-control" placeholder="email@example.com" />
+            </div>
+
+            <div class="mb-3">
+                <label>Password</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+            </div>
+
+            <button class="btn btn-primary w-100">Login</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="/Auth/Register">Create account</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+﻿@{
+    var token = Context.Session.GetString("JWToken");
+    var isLoggedIn = !string.IsNullOrEmpty(token);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - URL Shortener</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="@(isLoggedIn ? "/Links/Index" : "/Auth/Login")">
+                    URL Shortener
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        @if (isLoggedIn)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Links/Index">My Links</a>
+                            </li>
+
+                            <li class="nav-item ms-lg-2">
+                                <a class="btn btn-primary btn-sm" href="/Links/Create">+ Create Link</a>
+                            </li>
+
+                            <li class="nav-item ms-lg-2">
+                                <a class="btn btn-outline-danger btn-sm" href="/Auth/Logout">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ms-lg-2">
+                                <a class="btn btn-outline-light btn-sm" href="/Auth/Login">Login</a>
+                            </li>
+
+                            <li class="nav-item ms-lg-2">
+                                <a class="btn btn-primary btn-sm" href="/Auth/Register">Create Account</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="py-5">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted py-3">
+        <div class="container text-center">
+            <div>&copy; 2026 - URL Shortener</div>
+            <div class="small mt-1">
+                Developed by
+                <a href="https://github.com/curiokeit" target="_blank" class="text-decoration-none fw-semibold">
+                    curiokeit
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
